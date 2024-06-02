@@ -12,6 +12,7 @@
 		CB36CDD82C0ABE1B00015979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB36CDD72C0ABE1B00015979 /* Assets.xcassets */; };
 		CB36CDDB2C0ABE1B00015979 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CB36CDDA2C0ABE1B00015979 /* Base */; };
 		CB36CDDE2C0ABE1B00015979 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDDD2C0ABE1B00015979 /* main.m */; };
+		CB36CDEF2C0B6C8200015979 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDEE2C0B6C8200015979 /* Network.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		CB36CDDA2C0ABE1B00015979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB36CDDC2C0ABE1B00015979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB36CDDD2C0ABE1B00015979 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB36CDE82C0B606600015979 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		CB36CDEE2C0B6C8200015979 /* Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,20 @@
 		CB36CDE62C0AC20C00015979 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB36CDE72C0B604C00015979 /* Network */,
 				CB36CDD12C0ABE1800015979 /* ViewController.h */,
 				CB36CDD22C0ABE1800015979 /* ViewController.m */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CB36CDE72C0B604C00015979 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CB36CDE82C0B606600015979 /* Network.h */,
+				CB36CDEE2C0B6C8200015979 /* Network.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +176,7 @@
 			files = (
 				CB36CDD32C0ABE1800015979 /* ViewController.m in Sources */,
 				CB36CDCD2C0ABE1800015979 /* AppDelegate.m in Sources */,
+				CB36CDEF2C0B6C8200015979 /* Network.m in Sources */,
 				CB36CDDE2C0ABE1B00015979 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
