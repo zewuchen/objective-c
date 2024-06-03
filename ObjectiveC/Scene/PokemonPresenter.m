@@ -18,7 +18,7 @@
     self = [super init];
     self.adapter = adapter;
     if (!adapter) {
-        adapter = [[PokemonAdapter alloc] init];
+        adapter = [PokemonAdapter new];
     }
     self.network = network;
     return self;
