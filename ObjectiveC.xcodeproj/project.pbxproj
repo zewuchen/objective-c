@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0C63422C0D1FBB0089A6A4 /* PokemonCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C63412C0D1FBB0089A6A4 /* PokemonCoordinator.m */; };
+		CB0C63452C0D26CD0089A6A4 /* PokemonView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C63442C0D26CD0089A6A4 /* PokemonView.m */; };
+		CB0C63482C0D38C90089A6A4 /* PokemonAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C63472C0D38C90089A6A4 /* PokemonAdapter.m */; };
+		CB0C634B2C0D3B160089A6A4 /* PokemonPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C634A2C0D3B160089A6A4 /* PokemonPresenter.m */; };
 		CB36CDCD2C0ABE1800015979 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDCC2C0ABE1800015979 /* AppDelegate.m */; };
-		CB36CDD32C0ABE1800015979 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDD22C0ABE1800015979 /* ViewController.m */; };
+		CB36CDD32C0ABE1800015979 /* PokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDD22C0ABE1800015979 /* PokemonViewController.m */; };
 		CB36CDD82C0ABE1B00015979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB36CDD72C0ABE1B00015979 /* Assets.xcassets */; };
 		CB36CDDB2C0ABE1B00015979 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CB36CDDA2C0ABE1B00015979 /* Base */; };
 		CB36CDDE2C0ABE1B00015979 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDDD2C0ABE1B00015979 /* main.m */; };
@@ -16,11 +20,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0C63352C0C09130089A6A4 /* PokemonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonModel.h; sourceTree = "<group>"; };
+		CB0C633B2C0C0A4B0089A6A4 /* PokemonViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonViewModel.h; sourceTree = "<group>"; };
+		CB0C633F2C0C10530089A6A4 /* PokemonProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonProtocols.h; sourceTree = "<group>"; };
+		CB0C63402C0D1FBB0089A6A4 /* PokemonCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonCoordinator.h; sourceTree = "<group>"; };
+		CB0C63412C0D1FBB0089A6A4 /* PokemonCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonCoordinator.m; sourceTree = "<group>"; };
+		CB0C63432C0D26CD0089A6A4 /* PokemonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonView.h; sourceTree = "<group>"; };
+		CB0C63442C0D26CD0089A6A4 /* PokemonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonView.m; sourceTree = "<group>"; };
+		CB0C63462C0D38C90089A6A4 /* PokemonAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonAdapter.h; sourceTree = "<group>"; };
+		CB0C63472C0D38C90089A6A4 /* PokemonAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonAdapter.m; sourceTree = "<group>"; };
+		CB0C63492C0D3B160089A6A4 /* PokemonPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonPresenter.h; sourceTree = "<group>"; };
+		CB0C634A2C0D3B160089A6A4 /* PokemonPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonPresenter.m; sourceTree = "<group>"; };
 		CB36CDC82C0ABE1800015979 /* ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB36CDCB2C0ABE1800015979 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CB36CDCC2C0ABE1800015979 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CB36CDD12C0ABE1800015979 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CB36CDD22C0ABE1800015979 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CB36CDD12C0ABE1800015979 /* PokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonViewController.h; sourceTree = "<group>"; };
+		CB36CDD22C0ABE1800015979 /* PokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonViewController.m; sourceTree = "<group>"; };
 		CB36CDD72C0ABE1B00015979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB36CDDA2C0ABE1B00015979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB36CDDC2C0ABE1B00015979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +55,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0C63312C0C08A40089A6A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C63352C0C09130089A6A4 /* PokemonModel.h */,
+				CB0C633B2C0C0A4B0089A6A4 /* PokemonViewModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB0C63322C0C08B20089A6A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C63432C0D26CD0089A6A4 /* PokemonView.h */,
+				CB0C63442C0D26CD0089A6A4 /* PokemonView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB36CDBF2C0ABE1800015979 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				CB36CDE42C0ABE6800015979 /* Application */,
-				CB36CDE62C0AC20C00015979 /* Scenes */,
+				CB36CDE72C0B604C00015979 /* Network */,
+				CB36CDE62C0AC20C00015979 /* Scene */,
 				CB36CDE52C0ABE7C00015979 /* Resources */,
 			);
 			path = ObjectiveC;
@@ -86,14 +120,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CB36CDE62C0AC20C00015979 /* Scenes */ = {
+		CB36CDE62C0AC20C00015979 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				CB36CDE72C0B604C00015979 /* Network */,
-				CB36CDD12C0ABE1800015979 /* ViewController.h */,
-				CB36CDD22C0ABE1800015979 /* ViewController.m */,
+				CB0C63312C0C08A40089A6A4 /* Model */,
+				CB0C63322C0C08B20089A6A4 /* View */,
+				CB36CDD12C0ABE1800015979 /* PokemonViewController.h */,
+				CB36CDD22C0ABE1800015979 /* PokemonViewController.m */,
+				CB0C633F2C0C10530089A6A4 /* PokemonProtocols.h */,
+				CB0C63402C0D1FBB0089A6A4 /* PokemonCoordinator.h */,
+				CB0C63412C0D1FBB0089A6A4 /* PokemonCoordinator.m */,
+				CB0C63462C0D38C90089A6A4 /* PokemonAdapter.h */,
+				CB0C63472C0D38C90089A6A4 /* PokemonAdapter.m */,
+				CB0C63492C0D3B160089A6A4 /* PokemonPresenter.h */,
+				CB0C634A2C0D3B160089A6A4 /* PokemonPresenter.m */,
 			);
-			path = Scenes;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		CB36CDE72C0B604C00015979 /* Network */ = {
@@ -174,9 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB36CDD32C0ABE1800015979 /* ViewController.m in Sources */,
+				CB36CDD32C0ABE1800015979 /* PokemonViewController.m in Sources */,
+				CB0C63422C0D1FBB0089A6A4 /* PokemonCoordinator.m in Sources */,
+				CB0C63482C0D38C90089A6A4 /* PokemonAdapter.m in Sources */,
+				CB0C63452C0D26CD0089A6A4 /* PokemonView.m in Sources */,
 				CB36CDCD2C0ABE1800015979 /* AppDelegate.m in Sources */,
 				CB36CDEF2C0B6C8200015979 /* Network.m in Sources */,
+				CB0C634B2C0D3B160089A6A4 /* PokemonPresenter.m in Sources */,
 				CB36CDDE2C0ABE1B00015979 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
