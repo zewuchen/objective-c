@@ -36,6 +36,11 @@
     [_contentView setBackgroundColor: [UIColor blueColor]];
 }
 
+- (void) viewWillAppear:(BOOL) animated {
+    [super viewWillAppear: animated];
+    [_presenter loadData];
+}
+
 @end
 
 @implementation PokemonViewController (PokemonViewControllerTypeCategory)

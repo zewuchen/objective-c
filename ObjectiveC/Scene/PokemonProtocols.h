@@ -16,7 +16,7 @@
 @end
 
 @protocol PokemonAdapterType
-- (PokemonViewModel) adapt: (PokemonModel) model;
+- (PokemonViewModel *) adapt: (PokemonModel) model;
 @end
 
 @protocol PokemonPresenterType

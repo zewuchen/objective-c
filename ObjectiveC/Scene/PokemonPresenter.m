@@ -18,7 +18,7 @@
     self = [super init];
     self.adapter = adapter;
     if (!adapter) {
-        adapter = [PokemonAdapter new];
+        self.adapter = [PokemonAdapter new];
     }
     self.network = network;
     return self;
@@ -28,6 +28,30 @@
 
 @implementation PokemonPresenter (PokemonPresenterTypeCategory)
 
-- (void) loadData { }
+- (void) loadData { 
+    __weak typeof(self) weakSelf = self;
+
+    [self.network fetchData:^(NSDictionary *object, NSError *error) {
+        __strong typeof(self) strongSelf = weakSelf;
+
+        if (strongSelf) {
+            NSMutableArray *array = [NSMutableArray array];
+
+            if (object[@"results"] != nil) {
+                for (NSDictionary *item in object[@"results"]) {
+                    PokemonModel pokemon;
+                    pokemon.name = item[@"name"];
+                    PokemonViewModel *viewModel = [self.adapter adapt: pokemon];
+
+                    // addObject of an NSMutable only allows instances from NSObject
+                    // because of that, ViewModel can't be struct type
+                    [array addObject: viewModel];
+    
+                    NSLog(@"%@", array);
+                }
+            }
+        }
+    }];
+}
 
 @end
