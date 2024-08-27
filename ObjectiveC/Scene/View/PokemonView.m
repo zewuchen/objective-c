@@ -4,6 +4,7 @@
 
 @interface PokemonView ()
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) NSMutableArray<PokemonViewModel *> *viewModel;
 
 @property(nonatomic) void(^didTapLoading)(void);
 @property(nonatomic) void(^didTapError)(void);
@@ -18,6 +19,8 @@
                                                   style: UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = 60;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self addSubview: self.tableView];
     [self setupConstraints];
     return self;
@@ -38,7 +41,12 @@
 
 - (void) showError { }
 
-- (void) showReady { }
+- (void) showReady: (NSArray<PokemonViewModel *> *) viewModel {
+    self.viewModel = viewModel;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
 
 @end
 
@@ -49,7 +57,7 @@
 @implementation PokemonView (PokemonViewDataSourceCategory)
 
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
-    return 10;
+    return _viewModel.count;
 }
 
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
@@ -61,7 +69,8 @@
                                       reuseIdentifier: cellIdentifier];
     }
 
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld", (long)indexPath.row];
+    cell.textLabel.text = _viewModel[indexPath.row].name;
+    cell.contentView.backgroundColor = _viewModel[indexPath.row].color;
 
     return cell;
 }

@@ -12,7 +12,7 @@
 @protocol PokemonViewControllerType
 - (void) showLoading;
 - (void) showError;
-- (void) showReady;
+- (void) showReady: (NSArray<PokemonViewModel *> *) viewModel;
 @end
 
 @protocol PokemonAdapterType

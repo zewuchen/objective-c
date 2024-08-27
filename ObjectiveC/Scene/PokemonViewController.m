@@ -49,6 +49,8 @@
 
 - (void)showLoading { }
 
-- (void)showReady { }
+- (void) showReady: (NSArray<PokemonViewModel *> *) viewModel {
+    [_contentView showReady: viewModel];
+}
 
 @end

@@ -35,7 +35,7 @@
         __strong typeof(self) strongSelf = weakSelf;
 
         if (strongSelf) {
-            NSMutableArray *array = [NSMutableArray array];
+            NSMutableArray<PokemonViewModel *> *array = [NSMutableArray array];
 
             if (object[@"results"] != nil) {
                 for (NSDictionary *item in object[@"results"]) {
@@ -47,7 +47,7 @@
                     // because of that, ViewModel can't be struct type
                     [array addObject: viewModel];
     
-                    NSLog(@"%@", array);
+                    [self.viewController showReady: array];
                 }
             }
         }
