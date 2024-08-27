@@ -4,6 +4,7 @@
 
 @interface PokemonView ()
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property(nonatomic, strong) NSMutableArray<PokemonViewModel *> *viewModel;
 
 @property(nonatomic) void(^didTapLoading)(void);
@@ -21,7 +22,9 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 60;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
     [self addSubview: self.tableView];
+    [self addSubview: self.activityIndicator];
     [self setupConstraints];
     return self;
 }
@@ -30,20 +33,35 @@
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 
     [NSLayoutConstraint activateConstraints:@[
-        [self.tableView.topAnchor constraintEqualToAnchor:self.topAnchor],
-        [self.tableView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-        [self.tableView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor],
-        [self.tableView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor]
+        [self.tableView.topAnchor constraintEqualToAnchor: self.topAnchor],
+        [self.tableView.leadingAnchor constraintEqualToAnchor: self.leadingAnchor],
+        [self.tableView.trailingAnchor constraintEqualToAnchor: self.trailingAnchor],
+        [self.tableView.bottomAnchor constraintEqualToAnchor: self.bottomAnchor]
     ]];
 }
 
-- (void) showLoading { }
+- (void) resetStates {
+    _tableView.hidden = YES;
+    _activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+}
+
+- (void) showLoading {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self resetStates];
+        self.activityIndicator.center = CGPointMake(self.bounds.size.width / 2,
+                                                self.bounds.size.height / 2);
+        [self.activityIndicator startAnimating];
+    });
+}
 
 - (void) showError { }
 
 - (void) showReady: (NSArray<PokemonViewModel *> *) viewModel {
     self.viewModel = viewModel;
     dispatch_async(dispatch_get_main_queue(), ^{
+        [self resetStates];
+        self.tableView.hidden = NO;
         [self.tableView reloadData];
     });
 }

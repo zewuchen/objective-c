@@ -28,7 +28,9 @@
 
 @implementation PokemonPresenter (PokemonPresenterTypeCategory)
 
-- (void) loadData { 
+- (void) loadData {
+    [self.viewController showLoading];
+
     __weak typeof(self) weakSelf = self;
 
     [self.network fetchData:^(NSDictionary *object, NSError *error) {
