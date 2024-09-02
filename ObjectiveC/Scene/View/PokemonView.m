@@ -6,10 +6,6 @@
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property(nonatomic, strong) NSMutableArray<PokemonViewModel *> *viewModel;
-
-@property(nonatomic) void(^didTapLoading)(void);
-@property(nonatomic) void(^didTapError)(void);
-@property(nonatomic) void(^didTapReady)(void);
 @end
 
 @implementation PokemonView
@@ -126,7 +122,7 @@
 @implementation PokemonView (PokemonViewTableDelegateCategory)
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSLog(@"Tapped on row %ld", (long)indexPath.row);
+    [self didTapReady](indexPath.row);
 }
 
 @end

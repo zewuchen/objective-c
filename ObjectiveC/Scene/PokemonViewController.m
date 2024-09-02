@@ -34,6 +34,10 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [_contentView setBackgroundColor: [UIColor blueColor]];
+
+    [_contentView setDidTapReady:^(NSInteger row) {
+        NSLog(@"Tapped on row %ld", (long)row);
+    }];
 }
 
 - (void) viewWillAppear:(BOOL) animated {
@@ -65,7 +69,7 @@
     });
 }
 
-- (void)showLoading { 
+- (void) showLoading {
     [_contentView showLoading];
 }
 
