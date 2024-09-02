@@ -34,28 +34,26 @@
     __weak typeof(self) weakSelf = self;
 
     [self.network fetchData:^(NSDictionary *object, NSError *error) {
-        __strong typeof(self) strongSelf = weakSelf;
-
-        if (strongSelf) {
+        if (weakSelf) {
             NSMutableArray<PokemonViewModel *> *array = [NSMutableArray array];
 
             if (object[@"results"] != nil) {
                 for (NSDictionary *item in object[@"results"]) {
                     PokemonModel pokemon;
                     pokemon.name = item[@"name"];
-                    PokemonViewModel *viewModel = [self.adapter adapt: pokemon];
+                    PokemonViewModel *viewModel = [weakSelf.adapter adapt: pokemon];
 
                     // addObject of an NSMutable only allows instances from NSObject
                     // because of that, ViewModel can't be struct type
                     [array addObject: viewModel];
     
-                    [self.viewController showReady: array];
+                    [weakSelf.viewController showReady: array];
                 }
 
                 return;
             }
 
-            [self.viewController showError];
+            [weakSelf.viewController showError];
         }
     }];
 }
