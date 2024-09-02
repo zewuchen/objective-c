@@ -55,8 +55,6 @@
     });
 }
 
-- (void) showError { }
-
 - (void) showReady: (NSArray<PokemonViewModel *> *) viewModel {
     self.viewModel = viewModel;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -66,7 +64,33 @@
     });
 }
 
+//- (void) showError {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self resetStates];
+//        Depreciado
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ocorreu um erro"
+//                                                            message:@"Não foi possível carregar os pokemóns"
+//                                                           delegate:self
+//                                                  cancelButtonTitle:nil
+//                                                  otherButtonTitles:@"Tentar Novamente", nil];
+//        [alertView show];
+//    });
+//}
+
 @end
+
+// Depreciado
+//#pragma mark - UIAlertViewDelegate
+//@interface PokemonView (UIAlertViewDelegateCategory)<UIAlertViewDelegate>
+//@end
+//
+//@implementation PokemonView (UIAlertViewDelegateCategory)
+//- (void) alertView: (UIAlertView *) alertView clickedButtonAtIndex: (NSInteger) buttonIndex {
+//    if (buttonIndex == 0) {
+//        NSLog(@"Click");
+//    }
+//}
+//@end
 
 #pragma mark - UITableViewDataSource
 @interface PokemonView (PokemonViewDataSourceCategory)<UITableViewDataSource>

@@ -3,6 +3,5 @@
 
 @interface PokemonView: UIView
 - (void) showLoading;
-- (void) showError;
 - (void) showReady: (NSArray<PokemonViewModel *> *) viewModel;
 @end

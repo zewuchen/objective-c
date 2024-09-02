@@ -45,7 +45,25 @@
 
 @implementation PokemonViewController (PokemonViewControllerTypeCategory)
 
-- (void)showError { }
+- (void) showError {
+    __weak typeof(self) weakSelf = self;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        __strong typeof(self) strongSelf = weakSelf;
+
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ocorreu um erro"
+                                                                                 message:@"Não foi possível carregar os pokemóns"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Tentar Novamente"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction * _Nonnull action) {
+            [_presenter loadData];
+        }];
+        [alertController addAction:retryAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    });
+}
 
 - (void)showLoading { 
     [_contentView showLoading];

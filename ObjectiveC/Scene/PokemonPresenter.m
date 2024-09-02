@@ -51,7 +51,11 @@
     
                     [self.viewController showReady: array];
                 }
+
+                return;
             }
+
+            [self.viewController showError];
         }
     }];
 }
