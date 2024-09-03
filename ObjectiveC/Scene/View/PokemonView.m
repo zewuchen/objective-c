@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "PokemonView.h"
 #include "PokemonProtocols.h"
+#include "PokemonTableViewCell.h"
 
 @interface PokemonView ()
 @property(nonatomic, strong) UITableView *tableView;
@@ -18,6 +19,7 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 60;
     self.tableView.showsVerticalScrollIndicator = NO;
+    [self.tableView registerClass: [PokemonTableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
     [self addSubview: self.tableView];
     [self addSubview: self.activityIndicator];
@@ -100,15 +102,14 @@
 
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
     NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
+    PokemonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
-                                      reuseIdentifier: cellIdentifier];
+        cell = [[PokemonTableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
+                                           reuseIdentifier: cellIdentifier];
     }
 
-    cell.textLabel.text = _viewModel[indexPath.row].name;
-    cell.contentView.backgroundColor = _viewModel[indexPath.row].color;
+    [cell showData: _viewModel[indexPath.row]];
 
     return cell;
 }

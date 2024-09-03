@@ -18,6 +18,7 @@
 		CB36CDDB2C0ABE1B00015979 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CB36CDDA2C0ABE1B00015979 /* Base */; };
 		CB36CDDE2C0ABE1B00015979 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDDD2C0ABE1B00015979 /* main.m */; };
 		CB36CDEF2C0B6C8200015979 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = CB36CDEE2C0B6C8200015979 /* Network.m */; };
+		CB78B0FA2C86903300C9CE44 /* PokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB78B0F92C86903300C9CE44 /* PokemonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		CB36CDDD2C0ABE1B00015979 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB36CDE82C0B606600015979 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		CB36CDEE2C0B6C8200015979 /* Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		CB78B0F82C86901B00C9CE44 /* PokemonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewCell.h; sourceTree = "<group>"; };
+		CB78B0F92C86903300C9CE44 /* PokemonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 			children = (
 				CB0C63432C0D26CD0089A6A4 /* PokemonView.h */,
 				CB0C63442C0D26CD0089A6A4 /* PokemonView.m */,
+				CB78B0F82C86901B00C9CE44 /* PokemonTableViewCell.h */,
+				CB78B0F92C86903300C9CE44 /* PokemonTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB36CDD32C0ABE1800015979 /* PokemonViewController.m in Sources */,
+				CB78B0FA2C86903300C9CE44 /* PokemonTableViewCell.m in Sources */,
 				CB0C63422C0D1FBB0089A6A4 /* PokemonCoordinator.m in Sources */,
 				CB0C63482C0D38C90089A6A4 /* PokemonAdapter.m in Sources */,
 				CB0C63452C0D26CD0089A6A4 /* PokemonView.m in Sources */,
